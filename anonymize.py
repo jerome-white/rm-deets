@@ -5,7 +5,7 @@ import collections as cl
 from pathlib import Path
 from argparse import ArgumentParser
 
-from util import Anonymizer, MobileAnonymizer
+from util import Logger, Anonymizer, MobileAnonymizer
 
 Columns = cl.namedtuple('Columns', 'standard, mobile')
 

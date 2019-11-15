@@ -1,8 +1,19 @@
+import os
 import random
 import string
+import logging
 import collections as cl
+from pathlib import Path
 
 import phonenumbers as tel
+
+lvl = os.environ.get('PYTHONLOGLEVEL', 'WARNING').upper()
+fmt = '[ %(asctime)s %(levelname)s %(filename)s %(process)d ] %(message)s'
+logging.basicConfig(format=fmt,
+                    datefmt="%d %H:%M:%S",
+                    level=lvl)
+logging.captureWarnings(True)
+Logger = logging.getLogger(__name__)
 
 class RandomWord:
     def __init__(self, maxlen, unique=False):
