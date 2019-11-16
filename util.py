@@ -68,6 +68,6 @@ class MobileAnonymizer(Anonymizer):
 
     def parse(self, key):
         ph = tel.parse(key, self.region)
-        if not tel.is_possible_number(ph):
+        if not tel.is_valid_number(ph):
             raise ValueError('Invalid mobile number {}'.format(key))
         return ph.national_number
